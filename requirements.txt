@@ -1,0 +1,23 @@
+# Web framework
+fastapi>=0.110
+uvicorn[standard]>=0.29
+python-multipart>=0.0.9
+
+# Database (async)
+sqlalchemy[asyncio]>=2.0
+aiosqlite>=0.20          # default driver for zero-config quickstart
+aiomysql>=0.2            # use this for MySQL (see .env.example)
+
+# Settings & validation
+pydantic>=2.6
+pydantic-settings>=2.2
+email-validator>=2.1
+
+# Auth
+python-jose[cryptography]>=3.3
+passlib[bcrypt]>=1.7
+
+# Dev / test
+pytest>=8.0
+pytest-asyncio>=0.23
+httpx>=0.27
