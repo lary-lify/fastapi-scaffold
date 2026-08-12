@@ -12,6 +12,9 @@ class Settings(BaseSettings):
     ACCESS_TOKEN_EXPIRE_MINUTES: int = 30
 
     DATABASE_URL: str = "sqlite+aiosqlite:///./app.db"
+    # Dev convenience: create tables on startup via metadata.create_all.
+    # For production set this to false and run `alembic upgrade head`.
+    CREATE_TABLES_ON_STARTUP: bool = True
     CORS_ORIGINS: str = "http://localhost:3000"
 
     FIRST_SUPERUSER_EMAIL: str | None = None

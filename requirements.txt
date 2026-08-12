@@ -7,6 +7,7 @@ python-multipart>=0.0.9
 sqlalchemy[asyncio]>=2.0
 aiosqlite>=0.20          # default driver for zero-config quickstart
 aiomysql>=0.2            # use this for MySQL (see .env.example)
+alembic>=1.13            # production schema migrations
 
 # Settings & validation
 pydantic>=2.6
@@ -16,6 +17,7 @@ email-validator>=2.1
 # Auth
 python-jose[cryptography]>=3.3
 passlib[bcrypt]>=1.7
+bcrypt<4.0  # pin: passlib 1.7 与 bcrypt>=4.0 不兼容（detect_wrap_bug 触发 72 字节错误）
 
 # Dev / test
 pytest>=8.0

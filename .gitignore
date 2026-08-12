@@ -18,3 +18,7 @@ htmlcov/
 .vscode/
 .DS_Store
 *.log
+
+# 临时/产物 venv（验证用）
+.venv_new/
+.venv_313/

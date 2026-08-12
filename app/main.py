@@ -7,11 +7,15 @@ from app.api.routes import auth, users
 from app.core.config import settings
 from app.core.database import init_db
 from app.core.exceptions import register_exception_handlers
+from app.core.logging import configure_logging
 
 
 @asynccontextmanager
 async def lifespan(app: FastAPI):
-    await init_db()  # dev only — replace with Alembic in production
+    configure_logging()
+    if settings.CREATE_TABLES_ON_STARTUP:
+        # Dev only. In production disable this and run `alembic upgrade head`.
+        await init_db()
     yield
 
 

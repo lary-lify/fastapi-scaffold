@@ -1,0 +1,10 @@
+line-length = 100
+target-version = "py311"
+
+[lint]
+select = ["E", "F", "I", "B", "UP", "C4", "SIM"]
+# B008: FastAPI 在路由签名里用 Depends(...) 作默认值是官方推荐写法，属误报
+ignore = ["B008"]
+
+[format]
+quote-style = "double"
