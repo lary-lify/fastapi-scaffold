@@ -16,8 +16,7 @@ email-validator>=2.1
 
 # Auth
 python-jose[cryptography]>=3.3
-passlib[bcrypt]>=1.7
-bcrypt<4.0  # pin: passlib 1.7 与 bcrypt>=4.0 不兼容（detect_wrap_bug 触发 72 字节错误）
+bcrypt>=4.0  # 直接使用 bcrypt（不依赖 passlib，跨 Python 3.12/3.13 均有预编译 wheel）
 
 # Dev / test
 pytest>=8.0

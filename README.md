@@ -6,7 +6,7 @@
 
 - **分层架构**：`core`（配置/数据库/安全/异常）· `models` · `schemas` · `api`（路由 + 依赖）· `services`（待扩展）
 - **异步 ORM**：SQLAlchemy 2.0 async，默认 SQLite（零配置直接跑），一行切换 MySQL
-- **JWT 认证**：`python-jose` + `passlib[bcrypt]`，OAuth2 密码流登录
+- **JWT 认证**：`python-jose` + `bcrypt`，OAuth2 密码流登录
 - **统一响应 / 异常处理**：`AppError` → 统一错误信封 `{code, msg}`，422/500 自动拦截
 - **CORS**：基于环境变量，前端联调友好
 - **结构化日志**：`core/logging.py`，生产环境输出单行 JSON，DEBUG 下输出可读文本
